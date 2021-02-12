@@ -1,5 +1,7 @@
 # Project template
 
+Projects using [horovod](https://github.com/horovod/horovod), [PyTorch](https://pytorch.org) and/or [TensorFlow](https://www.tensorflow.org).
+
 ## Requirements
 - [docker](https://docs.docker.com/engine/install/) for cpu.
 - [nvidia-docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html) for gpu.
