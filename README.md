@@ -19,9 +19,9 @@ sh docker_run_gpu.sh
 
 Directory structure from [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510).
 
-- bin: put external scripts or compiled programs
-- data: put raw data and metadata
-- doc: put text documents associated with the project
-- results: put files generated during cleanup and analysis
-- src: put project source code
+- `bin`: put external scripts or compiled programs
+- `data`: put raw data and metadata
+- `doc`: put text documents associated with the project
+- `results`: put files generated during cleanup and analysis
+- `src`: put project source code
 
