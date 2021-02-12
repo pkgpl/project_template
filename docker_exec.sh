@@ -20,8 +20,8 @@ else
         lab|notebook)
             IP=`curl ifconfig.me`
             USER=`whoami`
-            echo "http://localhost:8888 or http://127.0.0.1:8888"
-            echo "  for ssh tunneling: ssh -N -L 8888:localhost:8888 $USER@$IP"
+            echo "http://localhost:$PORT_JUPYTER or http://127.0.0.1:$PORT_JUPYTER"
+            echo "  for ssh tunneling: ssh -N -L $PORT_JUPYTER:localhost:$PORT_JUPYTER $USER@$IP"
             echo "  password: $JUPYTER_PASSWORD"
             $EXEC_BG jupyter $1 --no-browser --ip=0.0.0.0 --NotebookApp.token=$JUPYTER_PASSWORD
             ;;
