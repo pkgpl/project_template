@@ -17,7 +17,7 @@ ENV GID $gid
 ENV HOME /home/$USER
 ENV PROJECT_DIR $HOME/$project_dir
 
-RUN groupadd -g $GID docker
+RUN groupadd -f -g $GID docker
 RUN adduser --disabled-password \
     --gecos "Non-root user" \
     --uid $UID \
