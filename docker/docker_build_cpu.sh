@@ -11,6 +11,6 @@ docker build \
   --build-arg uid=$USER_ID \
   --build-arg gid=$GROUP_ID \
   --build-arg project_dir=$PROJECT_DIR \
-  --file Dockerfile \
+  --file Dockerfile.cpu \
   --tag $IMAGE_NAME:$IMAGE_TAG \
   ../
