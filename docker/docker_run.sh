@@ -1,14 +1,19 @@
 #!/bin/sh 
 source Env.sh
 
+if [ $DEVICE == "gpu" ]; then
+    RUNTIME="--runtime nvidia"
+else
+    RUNTIME=""
+fi
+
 WORKDIR=/home/$USER_NAME/$PROJECT_DIR
 
 echo "Starting docker image: $IMAGE_NAME:$IMAGE_TAG"
 echo "  user in container: $USER_NAME (uid=$USER_ID, gid=$GROUP_ID)"
 echo "  project directory: $WORKDIR"
 
-docker run --tty \
-  --runtime nvidia \
+docker run --tty $RUNTIME \
   --name $PROJECT_NAME \
   --volume $PWD/../bin:$WORKDIR/bin \
   --volume $PWD/../data:$WORKDIR/data \

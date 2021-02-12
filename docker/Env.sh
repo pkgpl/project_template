@@ -1,6 +1,9 @@
 # project name without space
 PROJECT_NAME=my_project
 
+# device: cpu or gpu
+DEVICE=gpu
+
 # docker image name
 IMAGE_NAME=$PROJECT_NAME
 IMAGE_TAG=latest
