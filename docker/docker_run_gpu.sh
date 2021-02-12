@@ -1,4 +1,4 @@
-#!/usr/bin/sh 
+#!/bin/sh 
 source Env.sh
 
 WORKDIR=/home/$USER_NAME/$PROJECT_DIR
@@ -13,11 +13,12 @@ docker run --tty \
   --volume $PWD/../bin:$WORKDIR/bin \
   --volume $PWD/../data:$WORKDIR/data \
   --volume $PWD/../doc:$WORKDIR/doc \
-  --volume $PWD/../notebooks:$WORKDIR/notebooks \
   --volume $PWD/../results:$WORKDIR/results \
   --volume $PWD/../src:$WORKDIR/src \
   --publish 8888:$PORT_JUPYTER \
   --publish 6006:$PORT_TENSORBOARD \
   $IMAGE_NAME &
 
+sleep 2
+echo "$ docker ps"
 docker ps
