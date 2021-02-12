@@ -17,15 +17,13 @@ if [ $# == 0 ]; then
     $EXEC_FG bash
 else
     case $1 in
-        lab)
+        lab|notebook)
+            IP=`curl ifconfig.me`
+            USER=`whoami`
             echo "http://localhost:8888 or http://127.0.0.1:8888"
-            echo "password: $JUPYTER_PASSWORD"
-            $EXEC_BG jupyter lab --no-browser --ip=0.0.0.0 --NotebookApp.token=$JUPYTER_PASSWORD
-            ;;
-        notebook)
-            echo "http://localhost:8888 or http://127.0.0.1:8888"
-            echo "password: $JUPYTER_PASSWORD"
-            $EXEC_BG jupyter notebook --no-browser --ip=0.0.0.0 --NotebookApp.token=$JUPYTER_PASSWORD
+            echo "  for ssh tunneling: ssh -N -L 8888:localhost:8888 $USER@$IP"
+            echo "  password: $JUPYTER_PASSWORD"
+            $EXEC_BG jupyter $1 --no-browser --ip=0.0.0.0 --NotebookApp.token=$JUPYTER_PASSWORD
             ;;
         smi)
             $EXEC_FG nvidia-smi
