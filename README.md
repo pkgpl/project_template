@@ -11,8 +11,8 @@
 Edit `Env.sh`.
 
 ```
-sh docker_build_gpu.sh
-sh docker_run_gpu.sh
+sh docker_build.sh
+sh docker_run.sh
 ```
 
 ## Directories
