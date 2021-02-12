@@ -11,8 +11,8 @@
 Edit `Env.sh`.
 
 ```
-sh docker_build.sh
-sh docker_run.sh
+sh build.sh
+sh run.sh
 ```
 
 ## Directories
@@ -25,3 +25,4 @@ Directory structure from [Good enough practices in scientific computing](https:/
 - `results`: put files generated during cleanup and analysis
 - `src`: put project source code
 
+Directories above are mounted in the docker container.

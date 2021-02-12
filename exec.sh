@@ -2,21 +2,27 @@
 source docker/Env.sh
 
 if [ $# -gt 0 ] && [ $1 == "-h" ]; then
-    echo "no argument: bash"
-    echo "lab: jupyter lab"
-    echo "notebook: jupyter notebook"
-    echo "smi: nvidia-smi"
+    echo "$0 [argument]"
+    echo "  no argument: bash"
+    echo "  lab:         jupyter lab"
+    echo "  notebook:    jupyter notebook"
+    echo "  smi:         nvidia-smi"
+    echo "  su:          bash for root user"
     exit 0
 fi
 
-EXEC_FG="docker exec -it $PROJECT_NAME"
-EXEC_BG="docker exec -d $PROJECT_NAME"
+EXEC="docker exec"
+EXEC_FG="$EXEC -it $PROJECT_NAME"
+EXEC_BG="$EXEC -d $PROJECT_NAME"
 JUPYTER_PASSWORD="pkgpl"
 
 if [ $# == 0 ]; then
     $EXEC_FG bash
 else
     case $1 in
+        su)
+            $EXEC -it -u 0 $PROJECT_NAME bash
+            ;;
         lab|notebook)
             IP=`curl ifconfig.me`
             USER=`whoami`

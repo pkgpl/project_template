@@ -24,6 +24,6 @@ docker run --tty $RUNTIME \
   --publish 6006:$PORT_TENSORBOARD \
   $IMAGE_NAME &
 
-sleep 2
+sleep 3
 echo "$ docker ps"
 docker ps
