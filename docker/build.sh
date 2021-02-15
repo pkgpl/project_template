@@ -3,9 +3,9 @@
 source ./Env.sh
 
 if [ $DEVICE == "gpu" ]; then
-    DOCKERFROM="horovod/horovod:0.20.0-tf2.3.0-torch1.6.0-mxnet1.6.0.post0-py3.7-cuda10.1"
+    DOCKERFROM=$GPU_FROM
 else
-    DOCKERFROM="horovod/horovod:0.20.0-tf2.3.0-torch1.6.0-mxnet1.5.0-py3.7-cpu"
+    DOCKERFROM=$CPU_FROM
 fi
 
 echo "Building new docker image for $USER_NAME (uid=$USER_ID, gid=$GROUP_ID), device=$DEVICE"

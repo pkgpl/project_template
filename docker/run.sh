@@ -7,8 +7,6 @@ else
     RUNTIME=""
 fi
 
-WORKDIR=/home/$USER_NAME/$PROJECT_DIR
-
 echo "Starting docker image: $IMAGE_NAME:$IMAGE_TAG"
 echo "  user in container: $USER_NAME (uid=$USER_ID, gid=$GROUP_ID)"
 echo "  project directory: $WORKDIR"

@@ -2,11 +2,11 @@ ARG dockerfrom
 FROM $dockerfrom
 
 # pip packages
-RUN pip install matplotlib pandas jupyterlab scikit-learn bokeh mkl numba mpi4py
+pip install torchsummary
 
 # additional packages
-RUN git clone https://github.com/pkgpl/TorchWI.git /tmp/TorchWI
-RUN cd /tmp/TorchWI && python setup.py install
+RUN git clone https://github.com/pkgpl/TorchWI.git /work/TorchWI
+RUN cd /work/TorchWI && python setup.py install
 
 # Create a non-root user
 ARG username=dockeruser
@@ -30,15 +30,15 @@ RUN adduser --disabled-password \
     $USER
 
 # create a project directory inside user home
-RUN mkdir -p /work/$USER
-RUN chown $USER:$groupname /work/$USER
-
 USER $USER
 RUN mkdir $PROJECT_DIR
+
+# link to the project directory in /work
+RUN mkdir -p /work/$USER
+RUN chown $USER:$groupname /work/$USER
 RUN ln -s $PROJECT_DIR /work/$USER/$project_dir
+
 WORKDIR $PROJECT_DIR
 
 # environment variables
-ENV CUDA_HOME /usr/local/cuda
-ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_HOME}/lib64:/usr/local/lib"
 ENV PATH="${PATH}:$PROJECT_DIR/bin"
