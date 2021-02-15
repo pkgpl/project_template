@@ -1,5 +1,5 @@
 #!/bin/sh 
-source docker/Env.sh
+source ./Env.sh
 
 if [ $# -gt 0 ] && [ $1 == "-h" ]; then
     echo "$0 [argument]"
