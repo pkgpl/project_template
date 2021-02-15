@@ -2,6 +2,7 @@
 source ./Env.sh
 
 if [ $# -gt 0 ] && [ $1 == "-h" ]; then
+    echo "Container: $PROJECT_NAME"
     echo "$0 [argument]"
     echo "  no argument: bash"
     echo "  lab:         jupyter lab"
