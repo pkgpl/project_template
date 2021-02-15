@@ -14,6 +14,7 @@ echo "  user in container: $USER_NAME (uid=$USER_ID, gid=$GROUP_ID)"
 echo "  project directory: $WORKDIR"
 
 docker run --tty $RUNTIME \
+  --rm \
   --name $PROJECT_NAME \
   --volume $PWD/../bin:$WORKDIR/bin \
   --volume $PWD/../data:$WORKDIR/data \
@@ -24,6 +25,8 @@ docker run --tty $RUNTIME \
   --publish 6006:$PORT_TENSORBOARD \
   $IMAGE_NAME &
 
-sleep 3
+echo ""
+sleep 1
 echo "$ docker ps"
+sleep 2
 docker ps
