@@ -8,7 +8,8 @@ Projects using [pkgpl_base](https://github.com/pkgpl/pkgpl_base) docker images.
 
 ## Docker Setting
 
-In `docker` directory, edit `Env.sh` and run following commands.
+In `docker` directory, add additional packages you need to `Dockerfile`.
+Set `PROJECT_NAME` and `DEVICE` in `Env.sh` and run following commands.
 
 ```
 ./build.sh    # docker build
@@ -26,4 +27,6 @@ Directory structure from [Good enough practices in scientific computing](https:/
 - `results`: put files generated during cleanup and analysis
 - `src`: put project source code
 
-Directories above are mounted in the docker container.
+Directories above will be mounted in the docker container.
+- path:/home/$USER/$RPOJECT_DIR/
+- link:/work/$USER/$PROJECT_DIR/
