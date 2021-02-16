@@ -1,6 +1,6 @@
 # Project template
 
-Projects using [horovod](https://github.com/horovod/horovod), [PyTorch](https://pytorch.org) and/or [TensorFlow](https://www.tensorflow.org).
+Projects using [pkgpl_base](https://github.com/pkgpl/pkgpl_base) docker images.
 
 ## Requirements
 - [docker](https://docs.docker.com/engine/install/) for cpu.
@@ -8,13 +8,12 @@ Projects using [horovod](https://github.com/horovod/horovod), [PyTorch](https://
 
 ## Docker Setting
 
-`cd docker`
-
-Edit `Env.sh`.
+In `docker` directory, edit `Env.sh` and run following commands.
 
 ```
-sh build.sh
-sh run.sh
+./build.sh    # docker build
+./run.sh      # docker run
+./exec.sh -h  # docker exec
 ```
 
 ## Directories
