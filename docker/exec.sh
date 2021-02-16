@@ -18,11 +18,11 @@ EXEC_BG="$EXEC -d $PROJECT_NAME"
 JUPYTER_PASSWORD="pkgpl"
 
 if [ $# == 0 ]; then
-    $EXEC_FG bash
+    $EXEC_FG bash --login
 else
     case $1 in
         su)
-            $EXEC -it -u 0 $PROJECT_NAME bash
+            $EXEC -it -u 0 $PROJECT_NAME bash --login
             ;;
         lab|notebook)
             IP=`curl ifconfig.me`

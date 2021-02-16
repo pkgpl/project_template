@@ -22,6 +22,7 @@ docker run $RUNTIME \
   --volume $PWD/../src:$WORKDIR/src \
   --publish 8888:$PORT_JUPYTER \
   --publish 6006:$PORT_TENSORBOARD \
+  -h docker \
   $IMAGE_NAME &
 
 echo ""
