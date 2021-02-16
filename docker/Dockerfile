@@ -2,7 +2,7 @@ ARG dockerfrom
 FROM $dockerfrom
 
 # pip packages
-pip install torchsummary
+RUN pip install torchsummary
 
 # additional packages
 RUN git clone https://github.com/pkgpl/TorchWI.git /work/TorchWI
@@ -29,13 +29,15 @@ RUN adduser --disabled-password \
     --home $HOME \
     $USER
 
+# prepare link
+RUN mkdir /work/$USER
+RUN chown $USER:$groupname /work/$USER
+
 # create a project directory inside user home
 USER $USER
 RUN mkdir $PROJECT_DIR
 
 # link to the project directory in /work
-RUN mkdir -p /work/$USER
-RUN chown $USER:$groupname /work/$USER
 RUN ln -s $PROJECT_DIR /work/$USER/$project_dir
 
 WORKDIR $PROJECT_DIR

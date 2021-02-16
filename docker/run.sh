@@ -11,7 +11,8 @@ echo "Starting docker image: $IMAGE_NAME:$IMAGE_TAG"
 echo "  user in container: $USER_NAME (uid=$USER_ID, gid=$GROUP_ID)"
 echo "  project directory: $WORKDIR"
 
-docker run --tty $RUNTIME \
+docker run $RUNTIME \
+  --tty \
   --rm \
   --name $PROJECT_NAME \
   --volume $PWD/../bin:$WORKDIR/bin \

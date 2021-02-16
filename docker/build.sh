@@ -14,6 +14,7 @@ echo "  project directory: $PROJECT_DIR"
 
 docker build \
   --rm \
+  --no-cache \
   --build-arg dockerfrom=$DOCKERFROM \
   --build-arg username=$USER_NAME \
   --build-arg uid=$USER_ID \
