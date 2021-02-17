@@ -46,5 +46,5 @@ docker build \
   --build-arg project_dir=$PROJECT_DIR \
   --file Dockerfile \
   --tag $IMAGE_NAME:$IMAGE_TAG \
-  ../
+  ./
 
