@@ -8,7 +8,7 @@ else
     DOCKERFROM=$CPU_FROM
 fi
 
-echo "Building new docker image for $USER_NAME (uid=$USER_ID, gid=$GROUP_ID), device=$DEVICE"
+echo "Building new docker image for '$USER_NAME' (uid=$USER_ID, gid=$GROUP_ID), device=$DEVICE"
 echo "  image name: $IMAGE_NAME:$IMAGE_TAG"
 echo "  project directory: $PROJECT_DIR"
 

@@ -35,5 +35,9 @@ else
         smi)
             $EXEC_FG nvidia-smi
             ;;
+        *)
+            echo "Wrong argument"
+            exit 1
+            ;;
     esac
 fi
