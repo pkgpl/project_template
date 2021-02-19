@@ -31,6 +31,7 @@ if [ $# == 0 ]; then
       --volume $PWD/../src:$WORKDIR/src \
       --publish 8888:$PORT_JUPYTER \
       --publish 6006:$PORT_TENSORBOARD \
+      --ipc=host \
       $IMAGE_NAME &
 else
     case $1 in
@@ -48,6 +49,7 @@ else
               -v $HOME/.Xauthority:/home/$USER_NAME/.Xauthority \
               --env="DISPLAY" \
               --net=host \
+              --ipc=host \
               $IMAGE_NAME &
             ;;
         *)
