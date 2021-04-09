@@ -15,6 +15,7 @@ Set `PROJECT_NAME` and `DEVICE` in `Env.sh` and run following commands.
 ./build.sh    # docker build
 ./run.sh      # docker run
 ./exec.sh -h  # docker exec
+./helper.sh   # docker images, ps, stop, rmi
 ```
 
 ## Directories
