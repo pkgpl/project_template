@@ -20,37 +20,19 @@ echo "  user in container: $USER_NAME (uid=$USER_ID, gid=$GROUP_ID)"
 echo "  project directory: $WORKDIR"
 
 if [ $# == 0 ]; then
-    docker run $RUNTIME \
-      --tty \
-      --rm \
-      --name $PROJECT_NAME \
-      --volume $PWD/../bin:$WORKDIR/bin \
-      --volume $PWD/../data:$WORKDIR/data \
-      --volume $PWD/../doc:$WORKDIR/doc \
-      --volume $PWD/../results:$WORKDIR/results \
-      --volume $PWD/../src:$WORKDIR/src \
-      --publish 8888:$PORT_JUPYTER \
-      --publish 6006:$PORT_TENSORBOARD \
-      --ipc=host \
-      $IMAGE_NAME &
+    OPT=" \
+        --publish 8888:$PORT_JUPYTER \
+        --publish 6006:$PORT_TENSORBOARD \
+        "
 else
     case $1 in
         x11)
-            docker run $RUNTIME \
-              --tty \
-              --rm \
-              --name $PROJECT_NAME \
-              --volume $PWD/../bin:$WORKDIR/bin \
-              --volume $PWD/../data:$WORKDIR/data \
-              --volume $PWD/../doc:$WORKDIR/doc \
-              --volume $PWD/../results:$WORKDIR/results \
-              --volume $PWD/../src:$WORKDIR/src \
+            OPT="
               -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
               -v $HOME/.Xauthority:/home/$USER_NAME/.Xauthority \
               --env="DISPLAY" \
               --net=host \
-              --ipc=host \
-              $IMAGE_NAME &
+              "
             ;;
         *)
             echo ""
@@ -59,6 +41,18 @@ else
             ;;
     esac
 fi
+docker run $RUNTIME \
+      --tty \
+      --rm \
+      --name $PROJECT_NAME \
+      --volume $PWD/../bin:$WORKDIR/bin \
+      --volume $PWD/../data:$WORKDIR/data \
+      --volume $PWD/../doc:$WORKDIR/doc \
+      --volume $PWD/../results:$WORKDIR/results \
+      --volume $PWD/../src:$WORKDIR/src \
+      $OPT \
+      --ipc=host \
+      $IMAGE_NAME &
 
 echo ""
 sleep 1
