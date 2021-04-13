@@ -17,7 +17,6 @@ fi
 EXEC="docker exec"
 EXEC_FG="$EXEC -it $PROJECT_NAME"
 EXEC_BG="$EXEC -d $PROJECT_NAME"
-JUPYTER_PASSWORD="pkgpl"
 
 if [ $# == 0 ]; then
     $EXEC_FG bash --login

@@ -2,11 +2,10 @@ ARG dockerfrom
 FROM $dockerfrom
 
 # pip packages
-RUN pip install torchsummary
+#RUN pip install 
 
-# additional packages
-RUN git clone https://github.com/pkgpl/TorchWI.git /work/TorchWI
-RUN cd /work/TorchWI && python setup.py install
+# install additional packages
+#RUN git clone 
 
 # docker shell prompt for root
 RUN echo 'export PS1="\e[0;31m(docker) \e[m[\u@\h \w]# "' >> /root/.profile
