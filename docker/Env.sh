@@ -19,6 +19,10 @@ USER_NAME=`whoami`
 PROJECT_DIR=$PROJECT_NAME
 WORKDIR=/home/$USER_NAME/$PROJECT_DIR
 
+# mount project 'root' or 'sub'directories (bin, data, doc, results, src) only
+MOUNT=root
+#MOUNT=sub
+
 USER_ID=`id -u`
 GROUP_ID=`id -g`
 

@@ -32,17 +32,16 @@ RUN adduser --disabled-password \
     $USER
 
 # prepare link
-RUN mkdir /work/$USER
+RUN mkdir -p /work/$USER
 RUN chown $USER:$groupname /work/$USER
 
 # create a project directory inside user home
 USER $USER
-RUN mkdir $PROJECT_DIR
+WORKDIR $PROJECT_DIR
 
 # link to the project directory in /work
 RUN ln -s $PROJECT_DIR /work/$USER/$project_dir
 
-WORKDIR $PROJECT_DIR
 
 # user environment variables
 ENV PATH="${PATH}:$PROJECT_DIR/bin"
