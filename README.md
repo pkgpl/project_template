@@ -34,7 +34,7 @@ Directories above will be mounted in the docker container.
 
 ## Example projects
 
-- [Seismic Data Analysis](https://github.com/pkgpl/seismic.git) [Youtube](https://youtu.be/d_zhD2A3Ues)
+- [Seismic Data Analysis](https://github.com/pkgpl/seismic.git) - [Youtube](https://youtu.be/d_zhD2A3Ues)
 - [Full Waveform Inversion](https://github.com/pkgpl/fwi_project_example.git)
 - [Wind Data Analysis](https://github.com/pkgpl/wind_distribution.git)
 - [Facies classification using Machine Learning](https://github.com/pkgpl/facies_classification.git)
