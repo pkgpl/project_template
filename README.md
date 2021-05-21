@@ -34,8 +34,8 @@ Directories above will be mounted in the docker container.
 
 ## Example projects
 
-- [Youtube](https://youtu.be/BoBWym799ek)
-- [Facies classification using Machine Learning](https://github.com/pkgpl/facies_classification.git)
-- [Wind Data Analysis](https://github.com/pkgpl/wind_distribution.git)
-- [Full Waveform Inversion](https://github.com/pkgpl/fwi_project_example.git)
+- [Youtube](https://youtu.be/qpf4fycdklo)
+    - [Facies classification using Machine Learning](https://github.com/pkgpl/facies_classification.git)
+    - [Wind Data Analysis](https://github.com/pkgpl/wind_distribution.git)
+    - [Full Waveform Inversion](https://github.com/pkgpl/fwi_project_example.git)
 - [Seismic Data Analysis](https://github.com/pkgpl/seismic.git) [[Youtube](https://youtu.be/d_zhD2A3Ues)]
