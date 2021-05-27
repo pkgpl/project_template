@@ -36,8 +36,8 @@ fi
 
 if [ $# == 0 ]; then
     OPT_NET=" \
-        --publish 8888:$PORT_JUPYTER \
-        --publish 6006:$PORT_TENSORBOARD \
+        --publish $PORT_JUPYTER:8888 \
+        --publish $PORT_TENSORBOARD:6006 \
         "
 else
     case $1 in
