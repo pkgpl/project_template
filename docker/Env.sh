@@ -4,7 +4,7 @@ PROJECT_NAME=my_project
 # device: cpu or gpu
 DEVICE=gpu
 
-GPU_FROM=pkgpl/pkgpl_base:0.20-gpu-horovod0.20.0-su-rsf
+GPU_FROM=pkgpl/pkgpl_base:0.22.1-gpu-horovod0.22.1-su-rsf
 CPU_FROM=pkgpl/pkgpl_base:0.20-cpu-horovod0.20.0-su-rsf
 
 # docker image name
